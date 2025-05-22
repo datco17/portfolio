@@ -1,0 +1,297 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/38770392c4.js" crossorigin="anonymous"></script>
+</head>
+
+  <div id="header">
+    <div class="container max-w-full">
+      <nav class="flex flex-row items-center justify-between flex-wrap">
+        <img src="images/logo.png" class="logo">
+        <ul id="sidemenu">
+        <li><a href="#header">Home</a></li>
+       <li><a href="#about">About</a></li>
+       <li><a href="#services">Services</a></li>
+       <li><a href="#portfolio">Portfolio</a></li>
+       <li><a href="#contact">Contact</a></li>
+       <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+       </ul>
+       <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+      <div class="header-text">
+
+        <h1>Hi, I'm <span>Tien Dat</span><br>From Vietnam</h1>
+<span class="header-text" id="type"></span>
+  </div>
+  <script>
+    const texts = [
+      "I'm a UI/UX Designer.",
+      "I love clean UI.",
+      "Welcome to my Profile!"
+    ];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let isDeleting = false;
+    const speed = 100;
+    const pause = 1500;
+
+    function typeEffect() {
+      const el = document.getElementById('type');
+
+      if (count >= texts.length) count = 0;
+
+      currentText = texts[count];
+
+      if (isDeleting) {
+        el.textContent = currentText.substring(0, index--);
+      } else {
+        el.textContent = currentText.substring(0, index++);
+      }
+
+      if (!isDeleting && index === currentText.length + 1) {
+        isDeleting = true;
+        setTimeout(typeEffect, pause);
+        return;
+      }
+
+      if (isDeleting && index === 0) {
+        isDeleting = false;
+        count++;
+      }
+
+      setTimeout(typeEffect, isDeleting ? speed / 2 : speed);
+    }
+
+    typeEffect();
+  </script>
+      </div>
+  </div>
+  <div id="about">
+    <div class="container">
+      <div class="flex justify-between flex-wrap">
+        <div class="about-col-1">
+          <img src="images/Frame 317.png">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-tittle">About Me</h1>
+          <p>I am a young graphic designer with a lot of passion and enthusiasm with the knowledge I have learned, a sense of responsibility at work, and gaining experience in a new working environment.</p>
+          <div class="tab-tittles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+            <p class="tab-links" onclick="opentab('Major')">Major</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <div class="flex flex-col justify-start">
+              <ul>
+                <li><span>Tools</span><br></li>
+              </ul>
+            <ul class="flex flex-row justify-start text-center items-center gap-4">
+             
+              <li><img src="images/Group 122.png"></li>
+              <li><img src="images/Group 125.png"></li>
+              <li><img src="images/Group 124.png"></li>
+              <li><img src="images/Group 123.png"></li>
+            </ul>
+            <ul>
+                <li><span>UI/UX Skills</span><br></li>
+              </ul>
+              <div class="flex flex-wrap md:flex-nowrap items-center gap-4">
+            <ul class="flex flex-row justify-start text-center items-center gap-4">
+             <li><img src="images/Group 126.png"></li>
+              <li><img src="images/Group 129.png"></li>
+              <li><img src="images/Group 132.png"></li>
+              <li><img src="images/Group 127.png"></li>
+              </ul>
+              <ul class="flex flex-row justify-start text-center items-center gap-4">
+              <li><img src="images/Group 128.png"></li>
+              <li><img src="images/Group 131.png"></li>
+              <li><img src="images/Group 130.png"></li>
+            </ul>
+            
+            </div>
+            </div>
+          </div>
+
+
+          <div class="tab-contents" id="Major">
+            <ul>
+              <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+              <li><span>Printing Design</span><br>Design that speaks in print</li>
+              <li><span>Graphic Design</span><br>Social Media Design</li>
+            </ul>
+          </div>
+          
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>2021</span><br>Internship At Kha Kim Trading and Service Joint Stock Company</li>
+              <li><span>2022-2023</span><br>Graphic Design At AS Investment Trading Service Company Limited</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2021-2023</span><br>Graphic Design At FPT Polytechnic</li>
+              <li><span>2024-2025</span><br>UI/UX At Telos Academy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- -----------services---------- -->
+
+  <div id="services">
+    <div class="flex flex-row justify-center">
+    <div class="container">
+      <h1 class="sub-tittle flex flex-row justify-center">My Services</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2 class="font-bold font-sans h2">Web Design</h2>
+          <p>Lorem ipsum dolor sit amet, consectrtur adipiscing elit. Sed nulla nibh, tincidunt sit amet sapien quis.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-code-compare"></i>
+          <h2 class="font-bold font-sans h2">UI/UX Design</h2>
+          <p>Lorem ipsum dolor sit amet, consectrtur adipiscing elit. Sed nulla nibh, tincidunt sit amet sapien quis.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-pen-ruler"></i>
+          <h2 class="font-bold font-sans h2">Graphic Design</h2>
+          <p>Lorem ipsum dolor sit amet, consectrtur adipiscing elit. Sed nulla nibh, tincidunt sit amet sapien quis.</p>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- ------------portfolio---------- -->
+
+<div id="portfolio">
+  <div class="flex flex-row justify-center">
+  <div class="container">
+    <h1 class="sub-tittle flex flex-row justify-center">My Work</h1>
+    <div class="work-list">
+      <div class="work">
+        <img src="images/vgear.png">
+        <div class="layer">
+          <h3>Vgear</h3>
+          <p>A desktop app that reduces ping and minimizes FPS drops for smoother gaming.</p>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="work">
+        <img src="images/VNtrade.png">
+        <div class="layer">
+          <h3>VNtrade</h3>
+          <p>VNTrade is a fast and secure platform for trading CS2 items.
+          </p>
+          <a href="work.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+        </div>
+      </div>
+      <div class="work">
+        <img src="images/hoststream.png">
+        <div class="layer">
+          <h3>HostStream</h3>
+          <p>HostStream – Reliable, high-speed, and secure server hosting solutions for business.
+          </p>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn">See More</a>
+  </div>
+  </div>
+</div>
+
+<!-- ---------------contact------------- -->
+
+<div id="contact">
+  <div class="flex flex-row justify-center">
+  <div class="container">
+    <!-- <div class="flex flex-row justify-center gap-10 md:w-48"> -->
+      <div class="contact-left flex flex-col items-center">
+        <h1 class="sub-tittle">Contact Me</h1>
+        <p><i class="fa-solid fa-paper-plane"></i>nhoxpro1704@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i>0383587376</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/datcolatui/?locale=vi_VN"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://discord.gg/f97pJwKW"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://www.instagram.com/_.datco.ne"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-%C4%91%E1%BA%A1t-bbaa602b0/"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <a href="images/CV-Nguyễn Bá Tiến Đạt.pdf" download class="btn btn2">Download CV</a>
+      </div>
+      <div class="contact-right">
+        <form>
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <div class="flex flex-row justify-center">
+          <button type="sumbit" class="btn btn2">Sumbit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="copyright">
+    <p>Copyright © TienDat. Made with <i class="fa-solid fa-heart"></i> by Me</p>
+  </div>
+</div>
+<button id="scrollTopBtn" title="Lên đầu trang"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    scrollTopBtn.onclick = function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+  </script>
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+      sidemenu.style.right = "0";
+    }
+    function closemenu(){
+      sidemenu.style.right = "-200px"
+    }
+  </script>
+</body>
+</html>
